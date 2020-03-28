@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Experiment 7</title>
+	<link rel="stylesheet" type="text/css" href="exp7.css">
+	<script type="text/javascript" src="exp7.js"></script>
+</head>
+<body> 
+
+	<div class="sidebar">
+		<a href="#signup">Sign Up</a>
+		<a href="#details">Personal Details</a>
+		<a href="#mcqs">MCQs</a>
+		<a href="#feedback">Feedback</a>
+		<a href="#survey">Survey</a>
+	</div>
+
+	<div class="card-bg">
+
+		<div id="signup" class="container"> <hr>
+			<h1> Sign Up </h1>
+			<form action="#details">
+			    <input type="text" placeholder="Name" name="name" oninput="setInit(0);">
+			    <input type="text" placeholder="Email" name="email" oninput="setInit(0);">
+			    <input type="password" placeholder="Password" name="psw" oninput="setInit(0);">
+			    <input type="password" placeholder="Repeat Password" name="repsw" oninput="setInit(0);"><br><br>
+			    <input type="checkbox" name=""><label>&nbsp&nbspRemember me</label><br><br>
+			    <button type="submit" onclick='return validateForm(0);'>Sign Up</button>
+			</form>
+		</div> 
+
+		<div id="details" class="container"> <hr>
+			<h1> Personal Details </h1>
+			<form action="#mcqs">
+			    <input type="text" placeholder="Name *" name="name" oninput="setInit(1);">
+			    <input type="text" placeholder="Roll Number *" name="roll" oninput="setInit(1);">
+			    <input type="date" placeholder="Date of birth *" name="dob" oninput="setInit(1);">
+			    <input type="text" placeholder="Phone Number *" name="mob" oninput="setInit(1);">
+			    <input type="text" placeholder="Branch" name="branch" oninput="setInit(1);"><br>
+			    <button type="submit" onclick='return validateForm(1);'>Submit</button>
+			</form>
+		</div> 
+
+		<div id="mcqs" class="container"> <hr>
+			<h1> MCQs </h1>
+			<h3>HTML multiple choice question quiz.</h3>
+			<form action="#feedback">
+
+			    <br><p class="question">1. What does HTML stand for?</p>        
+				<ul class="answers" onclick="setInit(2, false);">            
+				  <input type="radio" name="q1" value="a" id="q1a"><label>Home Tool Markup Language</label><br/>          
+				  <input type="radio" name="q1" value="b" id="q1b"><label>Hyper Text Markup Language</label><br/>            
+				  <input type="radio" name="q1" value="c" id="q1c"><label>Hyperlinks and Text Markup Language</label><br/>          
+				  <input type="radio" name="q1" value="d" id="q1d"><label>None of the above</label><br/>       
+				</ul>        
+
+				<br><p class="question">2. Choose the correct HTML element for the largest heading:</p>        
+				<ul class="answers" onclick="setInit(2, false);">            
+				  <input type="radio" name="q2" value="a" id="q2a"><label>&ltheading&gt</label><br/>           
+				  <input type="radio" name="q2" value="b" id="q2b"><label>&lth1&gt</label><br/>            
+				  <input type="radio" name="q2" value="c" id="q2c"><label>&lth0&gt</label><br/>           
+				  <input type="radio" name="q2" value="d" id="q2d"><label>&lthead&gt</label><br/>       
+				</ul>        
+
+				<br><p class="question">3. What is the correct HTML for creating a hyperlink?</p>        
+				<ul class="answers" onclick="setInit(2, false);">            
+				  <input type="radio" name="q3" value="a" id="q3a"><label>&lta url="http://www.google.com"&gtgoogle.com&lt/a&gt</label><br>
+				  <input type="radio" name="q3" value="b" id="q3b"><label>&lta name="http://www.google.com"&gtgoogle.com&lt/a&gt</label><br>
+				  <input type="radio" name="q3" value="c" id="q3c"><label>&lta href="http://www.google.com"&gtgoogle&lt/a&gt</label><br>
+				  <input type="radio" name="q3" value="d" id="q3d"><label>&lta&gthttp://www.google.com&lt/a&gt</label><br>
+				</ul>        
+
+				<br><p class="question">4. What is the correct format for making checkbox?</p>        
+				<ul class="answers" onclick="setInit(2, false);">           
+				  <input type="radio" name="q4" value="a" id="q4a"><label>&ltcheck&gt</label><br/>            
+				  <input type="radio" name="q4" value="b" id="q4b"><label>&ltinput type="check"&gt</label><br/>            
+				  <input type="radio" name="q4" value="c" id="q4c"><label>&ltcheckbox&gt</label><br/>            
+				  <input type="radio" name="q4" value="d" id="q4d"><label>&ltinput type="checkbox"&gt</label><br/>        
+				</ul>        
+
+				<br><p class="question">5. How can you open a link in a new tab/browser window?</p>        
+				<ul class="answers" onclick="setInit(2, false);">            
+				  <input type="radio" name="q5" value="a" id="q5a"><label>&lta href="url" new&gt</label><br/>            
+				  <input type="radio" name="q5" value="b" id="q5b"><label>&lta href="url" target="_blank"&gt</label><br/>            
+				  <input type="radio" name="q5" value="c" id="q5c"><label>&lta href="url" target="new"&gt</label><br/>           
+				  <input type="radio" name="q5" value="d" id="q5d"><label>None of the above</label><br/>        
+				</ul>
+
+				<br><br>
+			    <button type="submit" onclick='return validateForm(2);'>Submit</button>
+			</form>
+		</div> 
+
+		<div id="feedback" class="container"> <hr>
+			<h1> Feedback </h1>
+			<form action="#survey">
+
+			    <p>1. How did you learn about this site?</p>
+			    <select>
+			    	<option>Friend</option>
+			    	<option>Web Search</option>
+			    	<option>Email</option>
+			    	<option>Other</option>
+			    </select>
+
+			    <p><br>2. Are you able to find the information you look for?</p>
+			    <ul class="answers" onclick="setInit(3, false);"> 
+				    <input type="radio" name="2"><label>Yes</label><br>
+				    <input type="radio" name="2"><label>No</label><br>
+				</ul>
+
+			    <p><br>3. Do you find the information valuable?</p>
+			    <ul class="answers" onclick="setInit(3, false);"> 
+				    <input type="radio" name="3"><label>Yes</label><br>
+				    <input type="radio" name="3"><label>No</label><br>
+				</ul>
+
+			    <p><br>4. How visually appealing is our website?</p>
+			    <select>
+			    	<option>Excellent</option>
+			    	<option>Good</option>
+			    	<option>Ok</option>
+			    	<option>Bad</option>
+			    </select>
+
+			    <p><br>5. How easy is it to navigate our website?</p>
+			    <select>
+			    	<option>Very easy</option>
+			    	<option>Somewhat easy</option>
+			    	<option>Little difficult</option>
+			    	<option>Too confusing</option>
+			    </select>
+
+			    <p><br>6. How often do you visit our website?</p>
+			    <select>
+			    	<option>Daily</option>
+			    	<option>Once a week</option>
+			    	<option>Once a year</option>
+			    	<option>Never</option>
+			    </select>
+
+			    <p><br>7. What particular aspect(s) of our website do you like?</p>
+			    <ul class="answers" onclick="setInit(3, false);"> 
+				    <input type="checkbox" name="7"><label>Appearance</label><br>
+				    <input type="checkbox" name="7"><label>Content</label><br>
+				    <input type="checkbox" name="7"><label>Ease of use</label><br>
+				    <input type="checkbox" name="7"><label>Functionality</label><br>
+				    <input type="checkbox" name="7"><label>Usability</label><br>
+				</ul>
+
+			    <p><br>8. What score would you give this site out of 5?</p>
+			    <ul class="answers" onclick="setInit(3, false);"> 
+				    <input type="radio" name="8"><label>1&nbsp&nbsp</label>
+				    <input type="radio" name="8"><label>2&nbsp&nbsp</label>
+				    <input type="radio" name="8"><label>3&nbsp&nbsp</label>
+				    <input type="radio" name="8"><label>4&nbsp&nbsp</label>
+				    <input type="radio" name="8"><label>5&nbsp&nbsp</label>
+				</ul>
+
+			    <p><br>9. Are you likely to refer this site to a friend?</p>
+			    <ul class="answers" onclick="setInit(3, false);"> 
+				    <input type="radio" name="9"><label>Yes</label><br>
+				    <input type="radio" name="9"><label>No</label><br>
+				</ul>
+
+			    <p><br>10. How can we improve our website?</p>
+			    <textarea rows="5" cols="60"></textarea>
+
+			    <br><br><br>
+			    <button type="submit" onclick='return validateForm(3);'>Submit</button>
+			</form>
+		</div> 
+
+		<div id="survey" class="container"> <hr>
+			<h1> Survey </h1>
+			<h3>Student Questionnaire on Literacy.</h3>
+			<form action="#">
+
+			    <p><br>1. How many hours per week do you read for enjoyment?</p>
+			    <ul class="answers" onclick="setInit(4, false);"> 
+				    <input type="radio" name="5a"><label>More than an hour</label><br>
+				    <input type="radio" name="5a"><label>Less than an hour</label><br>
+				    <input type="radio" name="5a"><label>Not at all</label><br>
+				</ul>
+
+			    <p><br>2. Which type of book you prefer?</p>
+			    <ul class="answers" onclick="setInit(4, false);"> 
+				    <input type="checkbox" name="5b"><label>Magazines/Comics </label><br>
+				    <input type="checkbox" name="5b"><label>Newspapers </label><br>
+				    <input type="checkbox" name="5b"><label>Digital media </label><br>
+				    <input type="checkbox" name="5b"><label>Textbooks </label><br>
+				</ul>
+
+			    <p><br>3. Which type of article you read?</p>
+			    <ul class="answers" onclick="setInit(4, false);"> 
+				    <input type="checkbox" name="5c"><label>Short stories </label><br>
+				    <input type="checkbox" name="5c"><label>Novels </label><br>
+				    <input type="checkbox" name="5c"><label>Poems </label><br>
+				    <input type="checkbox" name="5c"><label>Biographies </label><br>
+				</ul>
+
+			    <p><br>4. What genre of books do you like?</p>
+			    <select>
+			    	<option>Science fiction</option>
+			    	<option>Satire</option>
+			    	<option>Drama</option>
+			    	<option>Action and Adventure</option>
+			    	<option>Romance</option>
+			    	<option>Mystery</option>
+			    	<option>Horror</option>
+			    	<option>Journals</option>
+			    	<option>Comics</option>
+			    </select>
+
+			    <p><br>5. How many people in your family read on a daily basis?</p>
+			    <ul class="answers" onclick="setInit(4, false);"> 
+				    <input type="radio" name="5e"><label>Less than 2</label><br>
+				    <input type="radio" name="5e"><label>2 - 3</label><br>
+				    <input type="radio" name="5e"><label>4 or more</label><br>
+				</ul>
+
+			    <br><br>
+			    <button type="submit" onclick='return validateForm(4);'>Submit</button>
+			</form>
+		</div> 
+		
+	</div>
+</body>
+</html> 
