@@ -39,26 +39,11 @@ function validateForm(formIndex){
 
 		var type = elements[i].getAttribute("name");
 
-		if(type == "Fname"){
+		if(type == "name"){
 			var pattern = /^[a-z ]+$/i;
 
 			if(!pattern.test(elements[i].value))
 				return displayError(formIndex, i, "Please enter a valid name. Only alphabets are allowed.");
-		}
-
-
-		if(type == "Lname"){
-			var pattern = /^[a-z ]+$/i;
-
-			if(!pattern.test(elements[i].value))
-				return displayError(formIndex, i, "Please enter a valid name. Only alphabets are allowed.");
-		}
-		
-		if(type == "Pnumber"){
-			var pattern = /^[789][0-9]{9}$/;
-
-			if(!pattern.test(elements[i].value))
-				return displayError(formIndex, i, "Please enter a valid phone number.");
 		}
 
 		if(type == "email"){
@@ -69,13 +54,25 @@ function validateForm(formIndex){
 		}
 
 		if(type == "psw"){
-			if(elements[i].value.length < 8)
-				return displayError(formIndex, i, "Password should be at least 8 characters long.");
+			if(elements[i].value.length < 6)
+				return displayError(formIndex, i, "Password should be at least 6 characters long.");
 		}
 
 		if(type == "repsw"){
 			if(elements[i].value != elements[i].previousElementSibling.value)
 				return displayError(formIndex, i, "Passwords do not match.");
+		}
+
+		if(type == "mob"){
+			var pattern = /^[789][0-9]{9}$/;
+
+			if(!pattern.test(elements[i].value))
+				return displayError(formIndex, i, "Please enter a valid phone number.");
+		}
+
+		if(type == "roll"){
+			if(isNaN(elements[i].value))
+				return displayError(formIndex, i, "Please enter a valid roll number.");
 		}
 
 		if (elements[i].type == "radio" || elements[i].type == "checkbox"){
